@@ -17,11 +17,9 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v3
 
-    # Step 2: Validate HTML files
-    - name: Validate HTML files
-      uses: chrisderlin/w3c-html-validator-action@v2
-      with:
-        path: index.html
+        # Step: Validate HTML files
+        - name: Validate HTML files
+        run: htmlhint index.html
 
     # Step 3: Validate CSS files
     - name: Validate CSS files
