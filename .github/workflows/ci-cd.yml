@@ -23,7 +23,9 @@ jobs:
     # Step: Validate HTML files
     - name: Validate HTML files
       run: htmlhint index.html
+      
 
+      
     # Step: Validate CSS files
     - name: Validate CSS files
       run: |
