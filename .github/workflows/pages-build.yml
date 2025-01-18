@@ -3,30 +3,25 @@ name: Pages Build and Deploy
 on:
   workflow_run:
     workflows:
-      - CI/CD Pipeline
+      - CI-CD  # Replace with the name of your CI/CD workflow
     types:
       - completed
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }} # Ensure it only runs if the previous workflow was successful
     steps:
-      # Step 1: Checkout the repository code
-      - name: Checkout Code
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Install dependencies if required
       - name: Install Dependencies
-        run: |
-          npm install
+        run: npm install
 
+      - name: Build the Site
+        run: npm run build  # Adjust this command to your build process
 
-
-      # Step 4: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Replace this with the directory containing the built static files
-
+          publish_dir: ./build  # Replace with your build directory
