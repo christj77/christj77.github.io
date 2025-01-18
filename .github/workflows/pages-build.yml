@@ -3,7 +3,7 @@ name: Pages Build and Deploy
 on:
   workflow_run:
     workflows:
-      - CI-CD  # Replace with the name of your CI/CD workflow
+      - CI/CD Pipeline  # Replace with the name of your CI/CD workflow
     types:
       - completed
 
