@@ -10,10 +10,26 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }} # Ensure it only runs if the previous workflow was successful
     steps:
+      # Step 1: Checkout the repository code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Build and Deploy
+      # Step 2: Install dependencies if required
+      - name: Install Dependencies
         run: |
-          echo "Building and deploying..."
+          npm install
+
+      # Step 3: Build the project (if necessary)
+      - name: Build Project
+        run: |
+          npm run build
+
+      # Step 4: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Replace this with the directory containing the built static files
+
