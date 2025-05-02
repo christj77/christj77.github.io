@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Dog & Scripture</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 30px; }
+    #dogMedia img, #dogMedia video { max-width: 50%; border-radius: 10px; margin-top: 20px; }
+    #verseBox { margin-top: 30px; padding: 20px; background: #f3f3f3; border-radius: 10px; display: inline-block; max-width: 600px; }
+  </style>
+</head>
+<body>
+
+  <h1> ** Holy Bible Sciptures ** </h1>
+
+  <li>2 - API Calls</li>
+
+  <div id="verseBox">
+    <p id="verseText">Loading verse...</p>
+    <small id="verseRef"></small>
+  </div>
+
+  <div id="dogMedia">Loading dog...</div>
+  <h3 id="dogName"></h3>
+
+  <script>
+    // Fetch random Bible verse
+    fetch('https://labs.bible.org/api/?passage=random&type=json')
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data) && data.length > 0) {
+          const verse = data[0];
+          document.getElementById('verseText').textContent = verse.text.trim();
+          document.getElementById('verseRef').textContent = `${verse.bookname} ${verse.chapter}:${verse.verse}`;
+        } else {
+          document.getElementById('verseText').textContent = "No verse received.";
+        }
+      })
+      .catch(err => {
+        document.getElementById('verseText').textContent = "Failed to load scripture.";
+        console.error("Bible API error:", err);
+      });
+
+
+    // Fetch random dog
+    fetch('https://random.dog/woof.json')
+      .then(res => res.json())
+      .then(data => {
+        const mediaUrl = data.url;
+        const isVideo = mediaUrl.endsWith('.mp4') || mediaUrl.endsWith('.webm');
+        const mediaContainer = document.getElementById('dogMedia');
+
+        if (isVideo) {
+          mediaContainer.innerHTML = `
+            <video controls>
+              <source src="${mediaUrl}" type="video/mp4">
+              Your browser does not support video.
+            </video>`;
+        } else {
+          mediaContainer.innerHTML = `<img src="${mediaUrl}" alt="Random Dog">`;
+        }
+
+        document.getElementById('dogName').textContent = "Jezus Christ";
+      })
+      .catch(err => {
+        document.getElementById('dogMedia').textContent = "Failed to load dog.";
+        console.error("Dog API error:", err);
+      });
+
+
+  </script>
+
+</body>
+</html>
