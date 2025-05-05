@@ -537,7 +537,7 @@
             <div class="contact-form-wrapper">
               <form id="contactForm" method="POST" action="https://formsubmit.co/christj77@gmail.com">
                 <!-- Hidden Inputs for FormSubmit -->
-                <input type="hidden" name="_next" value="https://christj77.github.io/thank-you.html">
+              <!--   <input type="hidden" name="_next" value="https://christj77.github.io/thank-you.html">-->
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_subject" value="Kubernetes - New Contact Form Submission">
         
@@ -643,9 +643,8 @@
             document.getElementById('thankYouPopup').style.display = 'none';
           }
         
-          // Add event listener to form submission
           document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from actually submitting
+            event.preventDefault(); // Prevent default initially
         
             let errorMessages = [];
         
@@ -681,6 +680,9 @@
               return; // Stop form submission
             }
         
+            // No errors, submit the form
+            this.submit();  // <-- THIS IS THE KEY
+
             // If no errors, show the popup and simulate submission
             showPopup();
         
@@ -688,7 +690,7 @@
             document.getElementById('contactForm').style.display = 'none';
         
             // You can uncomment the next line to let the form submit normally if needed:
-            // this.submit();
+              // this.submit();
           });
         </script>
         
