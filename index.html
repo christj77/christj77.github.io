@@ -349,8 +349,9 @@
 </section>
 
 <!-- Modal Container -->
+<!-- Modal Container -->
 <div id="content-modal" style="
-  display: none;
+  display: none; /* This will now work correctly */
   position: fixed;
   top: 0;
   left: 0;
@@ -358,10 +359,10 @@
   height: 100vh;
   background-color: rgba(0,0,0,0.6);
   z-index: 10000;
-  display: flex;
   justify-content: center;
   align-items: center;
 ">
+
   <div style="
     width: 35vw;
     height: 90vh;
@@ -384,7 +385,7 @@
     ">&times;</span>
 
     <!-- Content Iframe -->
-    <iframe id="content-frame" src="content.html" style="
+    <iframe id="content-frame"  style="
       width: 100%;
       height: 100%;
       border: none;
@@ -393,17 +394,26 @@
 </div>
 
 <!-- Modal Script -->
+<!-- Modal Script -->
 <script>
   function openContentPage() {
     const modal = document.getElementById("content-modal");
+    const frame = document.getElementById("content-frame");
+
+    // Set the iframe src dynamically when button is clicked
+    frame.src = "content.html";
     modal.style.display = "flex";
-  }
+  } 
 
   function closeContentPage() {
     const modal = document.getElementById("content-modal");
+    const frame = document.getElementById("content-frame");
+
     modal.style.display = "none";
+
   }
 </script>
+
 
 
 <!-- ========================= about style-4 end ========================= -->
