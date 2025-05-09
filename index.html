@@ -498,7 +498,7 @@
         <!-- Contact Form Section -->
         <div class="col-lg-8">
           <div class="contact-form-wrapper">
-            <form id="contactForm" method="POST" action="https://formsubmit.co/christj77@gmail.com">
+            <form id="contactForm" method="POST" >
               <!-- Hidden Inputs for FormSubmit -->
             <!--   <input type="hidden" name="_next" value="https://christj77.github.io/thank-you.html">-->
               <input type="hidden" name="_captcha" value="false">
@@ -596,18 +596,16 @@
       </div>
       
       <script>
-        // Function to show the popup
         function showPopup() {
           document.getElementById('thankYouPopup').style.display = 'flex';
         }
       
-        // Function to hide the popup
         function closePopup() {
           document.getElementById('thankYouPopup').style.display = 'none';
         }
       
         document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevent default initially
+          event.preventDefault();
       
           let errorMessages = [];
       
@@ -616,44 +614,40 @@
           const subject = document.getElementById('subject').value.trim();
           const message = document.getElementById('message').value.trim();
       
-          // Basic validation checks
-          if (!name) {
-            errorMessages.push("Please enter your Name.");
-          }
-      
+          if (!name) errorMessages.push("Please enter your Name.");
           if (!email) {
             errorMessages.push("Please enter your Email.");
           } else {
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email)) {
-              errorMessages.push("Please enter a valid Email address.");
-            }
+            if (!emailPattern.test(email)) errorMessages.push("Please enter a valid Email address.");
           }
-      
-          if (!subject) {
-            errorMessages.push("Please enter a Subject.");
-          }
-      
-          if (!message) {
-            errorMessages.push("Please enter a Message.");
-          }
+          if (!subject) errorMessages.push("Please enter a Subject.");
+          if (!message) errorMessages.push("Please enter a Message.");
       
           if (errorMessages.length > 0) {
             alert(errorMessages.join("\n"));
-            return; // Stop form submission
+            return;
           }
       
-          // No errors, submit the form
-          this.submit();  // <-- THIS IS THE KEY
-
-          // If no errors, show the popup and simulate submission
-          showPopup();
-      
-          // Optionally, hide the form after submission
-          document.getElementById('contactForm').style.display = 'none';
-      
-          // You can uncomment the next line to let the form submit normally if needed:
-            // this.submit();
+          // Use fetch to post to FormSubmit
+          fetch("https://formsubmit.co/ajax/christj77@gmail.com", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify({ name, email, subject, message })
+          })
+          .then(response => {
+            if (response.ok) {
+              showPopup();
+              document.getElementById('contactForm').reset(); // Clear form
+              document.getElementById('contactForm').style.display = 'none'; // Optional: hide form
+            } else {
+              alert("There was an error sending your message.");
+            }
+          })
+          .catch(error => {
+            console.error("Submission error:", error);
+            alert("There was a network error.");
+          });
         });
       </script>
       
