@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Jezus Christ</title>
+    <head>
+      <title>My Portfolio</title>
+      <!-- Google Analytics -->
+
+    </head>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="assets/css/bootstrap-5.0.0-beta1.min.css" />
+    <link rel="stylesheet" href="assets/css/LineIcons.2.0.css"/>
+    <link rel="stylesheet" href="assets/css/tiny-slider.css"/>
+    <link rel="stylesheet" href="assets/css/animate.css"/>
+    <link rel="stylesheet" href="assets/css/lindy-uikit.css"/>
+  </head>
+  <body>
+    <script src="assets/js/apicall.js"></script>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+      <div class="loader">
+        <div class="spinner">
+          <div class="spinner-container">
+            <div class="spinner-rotator">
+              <div class="spinner-left">
+                <div class="spinner-circle"></div>
+              </div>
+              <div class="spinner-right">
+                <div class="spinner-circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= preloader end ========================= -->
+
+    <!-- ========================= hero-section-wrapper-5 start ========================= -->
+    <section id="home" class="hero-section-wrapper-5">
+
+      <!-- ========================= header-6 start ========================= -->
+      <header class="header header-6">
+        <div class="navbar-area">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg">
+                  <a class="navbar-brand" href="index.html">
+                    <img src="assets/img/logo/lion.jpeg" alt="Logo" style="width: 100%;" /><br><br>
+
+                    <h7 id="weather-art">Weather in Montreal is loading...</h7>
+               
+                    
+                    <script>
+                      const apiKey = 'd41cd6aabc0ab435db110b308bf2b22f'; // Replace with your real key
+                    
+                      // ART - Montreal
+                      const montrealUrl = `https://api.openweathermap.org/data/2.5/weather?q=Montreal&appid=${apiKey}&units=metric`;
+                    
+                      fetch(montrealUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                          const desc = data.weather[0].description;
+                          const temp = Math.round(data.main.temp);
+                          document.getElementById('weather-art').innerText =
+                            `Art *--( Revelation 10 )-------> Montreal is ${desc} and ${temp}°C`;
+                        })
+                        .catch(err => {
+                          console.error(err);
+                          document.getElementById('weather-art').innerText = '❌ Unable to load weather for Montreal.';
+                        });
+                    </script>
+                    
+                    <script>
+                      // SIPHUMA - Midrand
+                      const midrandUrl = `https://api.openweathermap.org/data/2.5/weather?q=Midrand&appid=${apiKey}&units=metric`;
+                    
+                      fetch(midrandUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                          const desc = data.weather[0].description;
+                          const temp = Math.round(data.main.temp);
+                          document.getElementById('weather-siphuma').innerText =
+                            `Siphuma *--( Revelation 14 )-------> Midrand is ${desc} and ${temp}°C`;
+                        })
+                        .catch(err => {
+                          console.error(err);
+                          document.getElementById('weather-siphuma').innerText = '❌ Unable to load weather for Midrand.';
+                        });
+                    </script>
+                    
+                      
+
+                    </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                    <span class="toggler-icon"></span>
+                  </button>
+  
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
+                    <ul id="nav6" class="navbar-nav ms-auto">
+                      <li class="nav-item">
+                        <a class="page-scroll active" href="#home">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#feature">Skills </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#about">Projects </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#services">Services  </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#sermon">Warnings</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#contact">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="page-scroll" href="#map">Map</a>
+                      </li>
+                    </ul>
+                  </div>
+                  
+                  <div class="header-action d-flex">
+                    <a href="#0"> <i class="lni lni-cart"></i> </a>
+                    <a href="#0"> <i class="lni lni-alarm"></i> </a>
+                  </div>
+                  <!-- navbar collapse -->
+                </nav>
+                <!-- navbar -->
+              </div>
+            </div>
+            <!-- row -->
+          </div>
+          <!-- container -->
+        </div>
+        <!-- navbar area -->
+      </header>
+      <!-- ========================= header-6 end ========================= -->
+
+      <!-- ========================= hero-5 start ========================= -->
+      <div class="hero-section hero-style-5 img-bg" style="background-image: url('assets/img/hero/hero-5/clouds_back3.jpg')">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="hero-content-wrapper">
+                <h3 class="mb-30 wow fadeInUp" data-wow-delay=".3s">*Kubernetes Admin</h3>
+                <h4 class="mb-30 wow fadeInUp" data-wow-delay=".2s">*Software Developer </h4>
+                <h5 class="mb-30 wow fadeInUp" data-wow-delay=".2s">*Cisco Networking</h5>
+                <p class="mb-30 wow fadeInUp" data-wow-delay=".3s">Welcome to our website and thank you for your FOCUS <br>
+                  Rev 8:1 When Christ opens the seventh seal, there IS silence in Heaven<br>
+                  The sinner must repent & Meditate on Jezus quickly , time is of the essence
+              <br><br>
+                  <a href="https://www.paulbrunton.org/notebooks/4" target="_blank" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">
+                    Click Book : Meditation in Christ<i class="lni lni-chevron-right"></i>
+                  </a>
+                  <br>
+                              
+              </div>
+                  </div>
+            <div class="col-lg-6 align-self-end">
+              <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
+                <img src="assets/img/hero/hero-5/cloud.jpeg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ========================= hero-5 end ========================= -->
+
+    </section>
+    <!-- ========================= hero-section-wrapper-6 end ========================= -->
+
+    <!-- ========================= feature style-5 start ========================= -->
+    <section id="feature" class="feature-section feature-style-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
+            <div class="section-title text-center mb-60">
+              <h6>Revelation 20 v 15 </h6>
+              Whosover will not be found written in the Book  of Christ  will  GO TO HELL  ! <br>
+              <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s"></h3>
+              
+              <img src="assets/img/logo/Jezus_Christ.jpg" alt="Map GIF" style="width: 50%; height: 40%; object-fit: contain;">
+
+
+               
+              <p class="wow fadeInUp" data-wow-delay=".4s"> 
+                <p><br>
+                  But the day of the Lord Jezus Christ will come like a thief in which the  heavens and earth  will be destroyed with blazing fire and everything will melt with roaring heat  
+                </p>              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
+              <div class="icon">
+                <i class="lni lni-vector"></i>
+                <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                  </svg>                  
+              </div>
+              <div class="content">
+                <h5>Cluster Setup & Management</h5>
+                <p>Deploy and configure clusters using kubeadm .Join nodes and manage control plane components</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
+              <div class="icon">
+                <i class="lni lni-pallet"></i>
+                <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                  </svg> 
+              </div>
+              <div class="content">
+                <h5>Networking and Services</h5>
+                <p>Configure services , cluster DNS  and understand how netowking and commincation flow within the cluster</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
+              <div class="icon">
+                <i class="lni lni-stats-up"></i>
+                <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                  </svg> 
+              </div>
+              <div class="content">
+                <h5>Pod scheduling and Taints</h5>
+                <p>Control where pods are scheduled using taints , tolerations and affinities  and node selectors</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
+              <div class="icon">
+                <i class="lni lni-code-alt"></i>
+                <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                  </svg> 
+              </div>
+              <div class="content">
+                <h5>Security and RBAC</h5>
+                <p>Secure the cluster using Role Based Access Control , authentication methods and service accounts</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
+              <div class="icon">
+                <i class="lni lni-lock"></i>
+                <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                  </svg> 
+              </div>
+              <div class="content">
+                <h5>Storage and Volumes</h5>
+                <p>Attach persistant volumes to pods using PVC's and manage dynamic provisioning with Storage Classes</p>
+              </div>
+            </div>
+          </div>
+            <div class="col-lg-4 col-md-6">
+              <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
+                <div class="icon">
+                  <i class="lni lni-code"></i>
+                  <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+                    </svg> 
+                </div>
+                <div class="content">
+                  <h5>Troubleshooting and Logs </h5>
+                  <p>Identify and resolve issues with nodes , pods and networking using logs , events and kubectl describe </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+    <!-- ========================= feature style-5 end ========================= -->
+
+    <!-- ========================= about style-4 start ========================= -->
+    <section id="about" class="about-section about-style-4">
+      <div class="container">
+        <div class="row align-items-cent  er">
+          <div class="col-xl-5 col-lg-6">
+            <div class="about-content-wrapper">
+              <div class="section-title mb-30"><h4>Current Projects  </h4><br>
+                <p class="wow fadeInUp" data-wow-delay=".3s">Develop a fully responsive personal portfolio website using Bootsrap ,  HTML, CSS, and JavaScript, hosted on GitHub Pages. Integrated a Node.js backend to handle API requests and demonstrate frontend-backend communication. The project showcases UI design, REST API integration, and deployment skills using VS Code as the development environment. ,</p>
+              </div>
+              <ul>
+                <li class="wow fadeInUp" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle"></i>
+                  Transitioned from Windows OS to Ubuntu Linux to build and manage a Kubernetes cluster from scratch. Configured a Control Plane (Admin Node) and a Worker Node using VMware, enabling inter-node communication for pod orchestration and service deployment. Emphasized real-world sysadmin skills and  understanding of Linux environments.                </li>
+                <li class="wow fadeInUp" data-wow-delay=".4s">
+                  <i class="lni lni-checkmark-circle"></i>
+                  Created and containerized frontend and backend applications using Docker, and published custom images to Docker Hub. Demonstrated understanding of container lifecycle, image versioning, and registry workflows. This setup forms the foundation for Kubernetes deployment and CI/CD pipelines.                </li>
+                <li class="wow fadeInUp" data-wow-delay=".45s">
+                  <i class="lni lni-checkmark-circle"></i>
+                  Deployed multiple microservices into the Kubernetes cluster and ensured external accessibility via Ingress Controllers. Configured pods, services, and Ingress rules to allow controlled, secure access to applications. Focused on scalable deployment architecture and real-world cluster operations.                </li>
+                <li class="wow fadeInUp" data-wow-delay=".45s">
+                  <i class="lni lni-checkmark-circle"></i>
+                  Make sure the running pods and services for the cluster are able to accessed through Ingress by external user etc 
+                </li>
+              </ul>
+              <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Click Green API's  </a>------>
+                       
+              <button onclick="openContentPage()"  style="margin-top: 15px; padding: 8px 16px; border-radius: 6px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+                Bible Quotes & 2Pac dogs
+                </button>
+            
+            </div>
+          </div>
+          <div class="col-xl-7 col-lg-6">
+            <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
+              <img src="assets/img/about/about-4/about-img.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= about style-4 end ========================= -->
+
+<!-- ========================= services section start ========================= -->
+<section id="services" class="features-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Web Development -->
+<div class="col-lg-3 col-md-6 mb-4">
+  <div class="single-feature wow fadeInUp" data-wow-delay=".2s" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px;">
+    <div class="icon">
+      <i class="lni lni-html5"></i>
+      <svg width="90" height="60" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+      </svg>
+    </div>
+    <div class="content text-center">
+      <h5>Web Development</h5>
+      <p>I specialize in web development by creating responsive UI/UX using HTML, CSS, JavaScript, and React. My focus is on optimization for speed and accessibility, ensuring seamless user experiences across all devices. </p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Logo" class="service-img" style="max-width: 60px; margin: 10px 0;">
+   
+      <!-- Output -->
+      <div id="scripture-animal-output" style="margin-top: 15px; display: none;">
+        <p id="bible-verse" style="font-style: italic; font-size: 14px;"></p>
+        <div id="zoo-info" style="margin-top: 10px;">
+          <h6 id="animal-name" style="margin-bottom: 6px;"></h6>
+          <img id="animal-img" src="" alt="" style="max-width: 100px; border-radius: 8px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- Full-Stack Development -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="single-feature wow fadeInUp" data-wow-delay=".3s" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px;">
+          <div class="icon">
+            <i class="lni lni-code"></i>
+            <svg width="90" height="60" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+            </svg>
+          </div>
+          <div class="content text-center">
+            <h5>Full-Stack </h5>
+            <p>Under Full-Stack Principles,frontend technologies with backend frameworks such as Node.js, Java, and C#. I build scalable applications following MVC architecture, ensuring  communication between the client and server. </p>
+            <img src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Full Stack Icon" class="service-img">
+          
+             
+            <!-- Output -->
+            <div id="scripture-animal-output" style="margin-top: 15px; display: none;">
+              <p id="bible-verse" style="font-style: italic; font-size: 14px;"></p>
+              <div id="zoo-info" style="margin-top: 10px;">
+                <h6 id="animal-name" style="margin-bottom: 6px;"></h6>
+                <img id="animal-img" src="" alt="" style="max-width: 100px; border-radius: 8px;">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Database Integration -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="single-feature wow fadeInUp" data-wow-delay=".4s" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px;">
+          <div class="icon">
+            <i class="lni lni-database"></i>
+            <svg width="90" height="60" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+            </svg>
+          </div>
+          <div class="content text-center">
+            <h5>Database Integration</h5>
+            <p>Seamlessly integrating frontend and backend systems to enable data writing to MongoDB clusters, using the appropriate dependencies and technologies. Adept at managing databases such as PostgreSQL and MongoDB</p>
+            <img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL Logo" class="service-img">
+       
+    
+      
+            <!-- Output -->
+            <div id="scripture-animal-output" style="margin-top: 15px; display: none;">
+              <p id="bible-verse" style="font-style: italic; font-size: 14px;"></p>
+              <div id="zoo-info" style="margin-top: 10px;">
+                <h6 id="animal-name" style="margin-bottom: 6px;"></h6>
+                <img id="animal-img" src="" alt="" style="max-width: 100px; border-radius: 8px;">
+              </div>
+            </div>
+       
+          </div>
+        </div>
+      </div>
+
+      <!-- API Development -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="single-feature wow fadeInUp" data-wow-delay=".5s" style="border: 1px solid #ddd; border-radius: 12px; padding: 20px;">
+          <div class="icon">
+            <i class="lni lni-link"></i>
+            <svg width="90" height="60" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
+            </svg>
+          </div>
+          <div class="content text-center">
+            <h5>API / RestAPI calls </h5>
+            <p>Proficient in building Custom RESTful or GraphQL APIs, implementing secure authentication mechanisms, and integrating third-party services to fetch and display dynamic data in the frontend.</p>
+            <img src="https://cdn-icons-png.flaticon.com/512/545/545682.png" alt="API Icon" class="service-img">
+          
+            <br>
+            <!-- Button -->
+            
+          
+           
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ========================= services section end ========================= -->
+
+
+
+
+   <!-- ========================= Video Sermons ========================= -->
+<section id="sermon" class="feature-section feature-style-5" style="text-align: center; padding: 40px 20px;">
+  <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+    <h6 id="weather-siphuma">Weather in Midrand is loading...</h6><br>
+    <img src="assets/img/logo/angel.png" alt="Map GIF" style="width: 200px; height: 150px; object-fit: contain;">
+
+    <h4 style="margin-top: 40px;">God's Final Warning </h4><br>
+    <p> And I saw  angels Art and Siphuma fly in the midst of heaven, having the everlasting gospel to preach unto them that dwell on the earth, and to every nation, and kindred, and tongue, and people,
+<br>7 Saying with a loud voice, Fear God, and give glory to him; for the hour of his judgment is come: and worship him that made heaven, and earth, and the sea, and the fountains of waters.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+
+      <div style="text-align: center;">
+        <video width="300" height="180" controls style="border-radius: 8px;">
+          <source src="assets/videos/nothing.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="margin-top: 8px; font-size: 14px; color: #555;">Roman 3v23:All have sinned and await Judgment"</p>
+      </div>
+    
+      <div style="text-align: center;">
+        <video width="300" height="180" controls style="border-radius: 8px;">
+          <source src="assets/videos/revelation11.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="margin-top: 8px; font-size: 14px; color: #555;">Matthew 24v29:Sun darkens when Christ dies on CROSS  </p>
+      </div>
+    
+      <div style="text-align: center;">
+        <video width="300" height="180" controls style="border-radius: 8px;">
+          <source src="assets/videos/reve11v11.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="margin-top: 8px; font-size: 14px; color: #555;">Rev 11v11:Jezus Resurrects & Ascends tempestuously</p>
+      </div>
+      <div style="text-align: center;">
+        <video width="300" height="180" controls style="border-radius: 8px;">
+          <source src="assets/videos/lions.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p style="margin-top: 8px; font-size: 14px; color: #555;">Revelation 22 v 7 :THE END OF ALL THINGS </p>
+      </div>
+    </div>
+    
+</section>
+
+
+<!-- Optional CSS -->
+<style>
+  .service-img {
+    margin-top: 10px;
+    max-height: 60px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+</style>
+
+
+    <!-- ========================= contact-style-3 start ========================= -->
+    <section id="contact" class="contact-section contact-style-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
+            <div class="section-title text-center mb-50">
+              Hebrews 13 v 2 
+              <h3 class="mb-15">Get in touch</h3>
+              <div class="text">
+                "Be careful how you  entertain strangers for sometimes you  have entertained angels un-aware.
+
+            </div>
+          </div>
+        </div>
+       
+        <div class="row">
+          <!-- Contact Form Section -->
+          <div class="col-lg-8">
+            <div class="contact-form-wrapper">
+              <form id="contactForm" method="POST" action="https://formsubmit.co/christj77@gmail.com">
+                <!-- Hidden Inputs for FormSubmit -->
+              <!--   <input type="hidden" name="_next" value="https://christj77.github.io/thank-you.html">-->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Kubernetes - New Contact Form Submission">
+        
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <input type="text" id="name" name="name" class="form-input" placeholder="Name">
+                      <i class="lni lni-user"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <input type="email" id="email" name="email" class="form-input" placeholder="Email">
+                      <i class="lni lni-envelope"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <input type="text" id="number" name="number" class="form-input" placeholder="Number (optional)">
+                      <i class="lni lni-phone"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject">
+                      <i class="lni lni-text-format"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="single-input">
+                      <textarea name="message" id="message" class="form-input" placeholder="Message" rows="6"></textarea>
+                      <i class="lni lni-comments-alt"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-button">
+                      <button type="submit" class="button">
+                        <i class="lni lni-telegram-original"></i> Submit Message 
+                      </button><br>  <br>  
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <br>  <br>  
+          <!-- Contact Details Section -->
+          <div class="col-lg-4">
+            <div class="left-wrapper">
+              <div class="row">
+                <div class="col-lg-12 col-md-6">
+                  <div class="single-item">
+                    <div class="icon">
+                      <i class="lni lni-phone"></i>
+                    </div>
+                    <div class="text">
+                      <p>1-777-Repent-Quickly</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-6">
+                  <div class="single-item">
+                    <div class="icon">
+                      <i class="lni lni-envelope"></i>
+                    </div>
+                    <div class="text">
+                      <p>Holy Bible - Meditation</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-6">
+                  <div class="single-item">
+                    <div class="icon">
+                      <i class="lni lni-map-marker"></i>
+                    </div>
+                    <div class="text">
+                      <p>John 3 v 16 : For God so loved...</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Thank You Popup (Modal) -->
+        <div id="thankYouPopup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); color:white; justify-content:center; align-items:center; text-align:center;">
+          <div style="background: #333; padding: 20px; border-radius: 10px; max-width: 400px; margin: 0 auto;">
+            <h2>Thank you for your submission!</h2>
+            <p>Your message has been sent successfully. We will get back to you shortly.</p>
+            <button onclick="closePopup()">Close</button>
+          </div>
+        </div>
+        
+        <script>
+          // Function to show the popup
+          function showPopup() {
+            document.getElementById('thankYouPopup').style.display = 'flex';
+          }
+        
+          // Function to hide the popup
+          function closePopup() {
+            document.getElementById('thankYouPopup').style.display = 'none';
+          }
+        
+          document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default initially
+        
+            let errorMessages = [];
+        
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+        
+            // Basic validation checks
+            if (!name) {
+              errorMessages.push("Please enter your Name.");
+            }
+        
+            if (!email) {
+              errorMessages.push("Please enter your Email.");
+            } else {
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(email)) {
+                errorMessages.push("Please enter a valid Email address.");
+              }
+            }
+        
+            if (!subject) {
+              errorMessages.push("Please enter a Subject.");
+            }
+        
+            if (!message) {
+              errorMessages.push("Please enter a Message.");
+            }
+        
+            if (errorMessages.length > 0) {
+              alert(errorMessages.join("\n"));
+              return; // Stop form submission
+            }
+        
+            // No errors, submit the form
+            this.submit();  // <-- THIS IS THE KEY
+
+            // If no errors, show the popup and simulate submission
+            showPopup();
+        
+            // Optionally, hide the form after submission
+            document.getElementById('contactForm').style.display = 'none';
+        
+            // You can uncomment the next line to let the form submit normally if needed:
+              // this.submit();
+          });
+        </script>
+        
+  <br>    
+  <!-- ========================= footer style-4 start ========================= -->
+  <section id="map" class="feature-section feature-style-5" style="text-align: center; padding: 40px 20px;">
+    <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+      <h6 style="font-size: 16px; color: #888;">Location</h6>
+
+      <h3 style="margin-bottom: 20px;">Milky Way - Galaxy </h3>
+      <img src="assets/img/logo/angel.png" alt="Map GIF" style="width: 200px; height: 150px; object-fit: contain;">
+      <p style="font-size: 18px; line-height: 1.6;">
+        <h6>Revelation 20:11 </h6><br>
+
+        And I saw a great white throne, and Jezus Christ  sat on a cloud , from whose face the earth and the heavens fled away and there was no place to escape the  fire from God
+      </p>
+
+      <div style="display: flex; justify-content: center; align-items: center; width: 60%; margin: 20px auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+        <img src="assets/img/logo/mapgalaxy.gif" alt="Map of Canada" style="width: 50%; object-fit: cover;">
+        <img src="assets/img/logo/map.gif" alt="Map GIF" style="width: 50%; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+    
+      
+      
+      <!-- ========================= footer style-4 start ========================= -->
+    <footer class="footer footer-style-4">
+
+        <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+          <p>Designed by <a href="#" rel="nofollow" target="_blank">Jezus Christ</a></p>
+        </div>
+      </div>
+    </footer>
+    <!-- ========================= footer style-4 end ========================= -->
+
+
+
+    
+    <!-- ========================= scroll-top start ========================= -->
+    <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
+    <!-- ========================= scroll-top end ========================= -->
+		
+
+    <!-- ========================= JS here ========================= -->
+    <script src="assets/js/bootstrap-5.0.0-beta1.min.js"></script>
+    <script src="assets/js/tiny-slider.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  
+
+  <!-- Modal Container -->
+  <!-- Modal Container -->
+<!-- Modal Container -->
+<div id="content-modal" style="
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+">
+  <div style="
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  " onclick="event.stopPropagation()">
+    
+    <!-- Close Button -->
+    <div style="text-align: right; background: #f0f0f0; padding: 10px;">
+      <span onclick="closeContentPage()" style="
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #333;
+      ">&times;</span>
+    </div>
+
+    <!-- Iframe Content -->
+    <iframe id="content-frame" src="content.html" style="
+      flex: 1;
+      width: 100%;
+      border: none;
+    "></iframe>
+  </div>
+</div>
+
+<script>
+  function openContentPage() {
+    document.getElementById("content-modal").style.display = "flex";
+  }
+
+  function closeContentPage() {
+    document.getElementById("content-modal").style.display = "none";
+  }
+
+  // Optional: Close when clicking outside modal
+  document.getElementById("content-modal").addEventListener("click", function (e) {
+    if (e.target.id === "content-modal") {
+      closeContentPage();
+    }
+  });
+</script>
+
+
+
+
+  </body>
+
+
+
+
+</div>
