@@ -129,31 +129,43 @@
 
 
 <!---------- PDF Version -->
+    
+
+<!---------- PDF Version -->
         <div class="col">
           <div class="single-feature h-100">
             <div class="icon"><i class="lni lni-printer"></i></div>
             <div class="content">
               <h5>Printable PDF</h5> (A2 & A4 )<br>
               <img src="images/paper.png" alt="PDF Icon" style="max-width: 28px; vertical-align: middle; margin-left: 6px;" />
-              <p>Download puzzles as print-ready PDFs. Great for offline play.</p>
-           <strong id="pdfMarkLabel">$7.00 USD</p></strong> 
+             <ul style="margin-top: 8px; margin-bottom: 8px;">
+
+<div style="text-align: center;">
+  <ul style="margin-top: 8px; margin-bottom: 8px; display: inline-block; text-align: left;">
+     
+     <li>Email </li>
+    <li>Login detailz</li>
+    <li>Clue Help Mode </li>
+
+     <li>2 Free cluez </li>
+        <li>Client Support</li>
+  </ul>
+</div>
+   <br>  
+           <strong id="pdfMarkLabel">$20.00 USD</p></strong> 
 
                     <!-- ✅ Compact Inline Checkboxes -->
       <div style="margin-bottom: 10px;">
-        <!-- <label for="pdfMark" style="margin-right: 12px; white-space: nowrap;"> -->
+        <label for="pdfMark" style="margin-right: 12px; white-space: nowrap;">
           
 
-          <!-- <input type="checkbox" id="checkPDFMark" style="margin-right: 4px;">1 PDF -->
+<input type="checkbox" id="checkPDFMark" class="payment-check" style="margin-right: 4px;">1 PDF
             </label>
               </div>
-             <!-- <button id="stripeCheckoutPDF" class="btn btn-outline-primary mt-2">Buy with Stripe</button> -->
-
-
-           
+             <button id="stripeCheckoutPDF" class="btn btn-outline-primary mt-2">Buy with Stripe</button>
            </div>
           </div>
         </div>
-
 
         
 <!-- Web/Mobile Without Answers -->
@@ -324,6 +336,20 @@ Terms of Service / Purchase Policy!<BR><br><br>
 </section>
 
  
+<script>
+  const stripeLinks = {
+    stripeCheckoutPDF: "https://buy.stripe.com/test_00wcN5fuS2EU2zb6pP18c08",
+  };
+
+  Object.entries(stripeLinks).forEach(([buttonId, url]) => {
+    const button = document.getElementById(buttonId);
+    if (button) {
+      button.addEventListener('click', () => {
+        window.location.href = url;
+      });
+    }
+  });
+</script>
 
 
     </main>
