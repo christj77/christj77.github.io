@@ -1,4 +1,3 @@
-// Load Stripe public key
 //buypuzzle.js
 
 // index.js 
@@ -71,3 +70,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setupOption("checkWeb", "stripeCheckoutSelfMark", "selfmark_web");
   setupOption("checkNuclear", "stripeCheckoutNuclear", "nuclear");
 });
+
