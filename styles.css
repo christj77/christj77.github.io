@@ -1,135 +1,237 @@
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
 
-.navbar {
-  background-color: #0cfb18;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .navbar {
+      background-color: #0cfb18;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-.title {
-  font-size: 1.4rem;
-  margin: 0;
-}
+    .title {
+      font-size: 1.4rem;
+      margin: 0;
+    }
 
-.logout-button {
-  background-color: #0629f0;
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.logout-button:hover {
-  background-color: #c0392b;
-}
+    .logout-button {
+      background-color: #0629f0;
+      border: none;
+      color: white;
+      padding: 6px 12px;
+      font-size: 14px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .logout-button:hover {
+      background-color: #c0392b;
+    }
 
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
 
-/* Landscape A4 Grid Area */
-.grid-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2px;
-  page-break-after: always; /* force page break after grid */
-}
+    /* Landscape A4 Grid Area */
+    .grid-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2px;
+      page-break-after: always; /* force page break after grid */
+    }
 
-#grid {
-  display: grid;
-  grid-template-columns: repeat(65, 15px);
-  grid-template-rows: repeat(45, 15px);
-  background-color: #fff;
-  border: 1px solid #051df6;
-  width: max-content;
-  height: 95%;
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(65, 15px);
+      grid-template-rows: repeat(45, 15px);
+      background-color: #fff;
+      border: 1px solid #051df6;
+      width: max-content;
+      height: auto;
 
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1px;
+      margin-bottom: 1px;
+    }
 
-.cell {
-  width: 15px;
-  height: 15px;
-  border: 1px solid #ccc;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 15px;
-  font-size: 11px;
-  position: relative;
-  background-color: rgb(255, 252, 252);
-  transition: background-color 0.3s ease;
-}
+    .cell {
+      width: 15px;
+      height: 15px;
+      border: 1px solid #ccc;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 15px;
+      font-size: 11px;
+      position: relative;
+      background-color: rgb(255, 252, 252);
+      transition: background-color 0.3s ease;
+    }
 
-/* *** Added to enforce black square visibility *** */
-.cell.black-square {
-  background-color: black !important;
-  border-color: black !important;
-}
+    /* *** Added to enforce black square visibility *** */
+    .cell.black-square {
+      background-color: black !important;
+      border-color: black !important;
+    }
 
-/* Clue number in the cell */
-.clue-number {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  font-size: 8px;
-  color: black;
-  font-weight: bold;
-}
+    /* Clue number in the cell */
+    .clue-number {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      font-size: 8px;
+      color: black;
+      font-weight: bold;
+    }
 
-/* 2nd A4 page for clues */
-.clue-page {
-  width: 100%;
-  padding: 0px;
-}
+    /* 2nd A4 page for clues */
+    .clue-page {
+      width: 100%;
+      padding: 0px;
+    }
 
-.clue-section {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* was 4 */
-  column-gap: 0px;
-}
+    .clue-section {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* was 4 */
+      column-gap: 0px;
+    }
 
-.clue-inline-list {
-  white-space: pre-wrap;
-  font-size: 10px;
-  padding: 0 0px;
-}
+    .clue-inline-list {
+      white-space: pre-wrap;
+      font-size: 10px;
+      padding: 0 0px;
+    }
 
-h3 {
-  text-align: center;
-}
+    h3 {
+      text-align: center;
+    }
 
-/* Blur text in clues and crossword cells */
-.blur-text {
-  color: transparent !important;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  user-select: none;
-  pointer-events: none;
-}
+    /* Blur text in clues and crossword cells */
+    .blur-text {
+      color: transparent !important;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      user-select: none;
+      pointer-events: none;
+    }
 
-/* If grid cells are inputs, blur them too */
-.blur-input {
-  filter: blur(4px);
-  pointer-events: none;
-  user-select: none;
-}
-
-
+    /* If grid cells are inputs, blur them too */
+    .blur-input {
+      filter: blur(4px);
+      pointer-events: none;
+      user-select: none;
+    }
 
 
+    .termz-img {
+      width: 10%;         /* You can adjust this % */
+      max-width: 17%;   /* Optional: cap it for large screens */
+      height: auto;       /* Maintain aspect ratio */
+      display: block;
+      margin: 20px auto;  /* Center horizontally */
+      border: 2px solid #03fe18;  /* Optional styling */
+      border-radius: 10px;
+    }
+
+    body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          background: #f9f9f9;
+          display: flex;
+          justify-content: center;
+        }
+        .content-wrapper {
+          width: 90%;
+          max-width: 900px;
+          border: 3px solid #007BFF; /* blue border */
+          padding: 20px 30px;
+          background: white;
+          text-align: center;
+          box-sizing: border-box;
+          line-height: 1.6;
+          color: #333;
+        }
+        h1, h2 {
+          color: #333;
+          text-decoration: underline;
+          margin-bottom: 0.5em;
+        }
+        ul {
+          display: inline-block;
+          text-align: left;
+          margin: 0 auto 1em auto;
+          padding-left: 1.2em;
+        }
+        a {
+          color: #007BFF;
+          text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        p {
+          margin-bottom: 1em;
+        }
+        
+
+        .termz-img {
+      width: 35%;         /* You can adjust this % */
+      max-width: 30%;   /* Optional: cap it for large screens */
+      height: auto;       /* Maintain aspect ratio */
+      display: block;
+      margin: 20px auto;  /* Center horizontally */
+      border: 7px solid #03fe18;  /* Optional styling */
+      border-radius: 10px;
+    }
+
+  #pdfMessageWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: 2rem;
+  }
+
+  .pdf-message {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.7rem;
+    line-height: 1;
+    max-width: 30%;
+    text-align: center;
+    width: 100%;
+  }
+ 
+  #printButton {
+    padding: 10px 10px;
+    font-size: 1rem;
+    background-color: #1a73e8; /* Google Blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+  }
+
+  #printButton:hover {
+    background-color: #4385ef;
+  }
+
+  #printButton:disabled {
+    background-color: #ec0606;
+    cursor: not-allowed;
+  }
+ 
+
+  /*---contact s--*/
