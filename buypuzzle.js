@@ -2,32 +2,19 @@
 import { API_BASE_URL } from './env.js';
 const stripe = Stripe("pk_test_51ORJoiG2bkDewjdvKJWhEyxMATYufDM7vXvwV5DYBGSdt3VkkBqqR0inymD8l1V15mhpATpOQ4N6oR59YzJFlgTA00Ulo4V4WL");
 
-let allCheckboxes = [];
-let allButtons = [];
-
 // Link checkboxes to buttons with behavior
 function setupOption(checkboxId, buttonId, productId) {
   const checkbox = document.getElementById(checkboxId);
   const button = document.getElementById(buttonId);
 
-  allCheckboxes.push(checkbox);
-  allButtons.push(button);
-
   // Disable button initially
   button.disabled = true;
 
-  // Toggle button, and make sure only ONE is enabled at a time
+  // Show agreement alert and toggle button
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
-      // Uncheck all other checkboxes and disable their buttons
-      allCheckboxes.forEach(cb => {
-        if (cb !== checkbox) cb.checked = false;
-      });
-      allButtons.forEach(btn => {
-        if (btn !== button) btn.disabled = true;
-      });
+alert("1 Crossword = 1 User = 1 Device\nI Agree To Purchase Terms & Conditionz");
 
-      // Enable this button
       button.disabled = false;
     } else {
       button.disabled = true;
@@ -71,6 +58,7 @@ function handleStripeCheckout(product) {
     alert("Error starting payment. See console.");
   });
 }
+
 
 // Call setupOption after page loads
 document.addEventListener("DOMContentLoaded", () => {
