@@ -371,6 +371,34 @@ Its a legal binding confirmation you accept  <br>Purchase Termz & Conditionz.
   </section>
 
   <!-- ========================= puzzle options section end ========================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll('.payment-check');
+    const buttons = {
+      checkClueMark: document.getElementById('stripeCheckoutClue'),
+      checkPDFMark: document.getElementById('stripeCheckoutPDF'),
+      checkWebNoMark: document.getElementById('stripeCheckoutNoMark'),
+      checkWeb: document.getElementById('stripeCheckoutSelfMark'),
+      checkNuclear: document.getElementById('stripeCheckoutNuclear')
+    };
+
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkboxes.forEach(cb => {
+            if (cb !== checkbox) {
+              cb.checked = false;
+              if (buttons[cb.id]) buttons[cb.id].disabled = true;
+            }
+          });
+          if (buttons[checkbox.id]) buttons[checkbox.id].disabled = false;
+        } else {
+          if (buttons[checkbox.id]) buttons[checkbox.id].disabled = true;
+        }
+      });
+    });
+  });
+</script>
 
   <script>
     const stripeLinks = {
@@ -437,7 +465,7 @@ Its a legal binding confirmation you accept  <br>Purchase Termz & Conditionz.
 <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
 
 <!-- Your main logic script comes last -->
-<script type="module" src="buypuzzle.js"></script>
+<script  src="buypuzzle.js"></script>
 </html>
 </body>
 </html>
