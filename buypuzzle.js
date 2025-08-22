@@ -1,22 +1,28 @@
 //buypuzzle.js
-
-// index.js 
+// buypuzzle.js
 import { API_BASE_URL } from './env.js';
-const stripe = Stripe("pk_test_51ORJoiG2bkDewjdvKJWhEyxMATYufDM7vXvwV5DYBGSdt3VkkBqqR0inymD8l1V15mhpATpOQ4N6oR59YzJFlgTA00Ulo4V4WL");
+const stripe = Stripe("pk_test_51ORJoiG2bkDewjdvKJWhEyxMATYufDM7vXvwV5DYBGSdt3VkkBqqR0inymD8l1V15mhpAToQ4N6oR59YzJFlgTA00Ulo4V4WL");
 
 // Link checkboxes to buttons with behavior
-function setupOption(checkboxId, buttonId, productId) {
+function setupOption(checkboxId, buttonId, productId, allOptions) {
   const checkbox = document.getElementById(checkboxId);
   const button = document.getElementById(buttonId);
 
   // Disable button initially
   button.disabled = true;
 
-  // Show agreement alert and toggle button
+  // Toggle button (alert removed, only one active at a time)
   checkbox.addEventListener("change", () => {
     if (checkbox.checked) {
-alert("1 Crossword = 1 User = 1 Device\nI Agree To Purchase Terms & Conditionz");
+      // Uncheck and disable all other checkboxes/buttons
+      allOptions.forEach(({ checkbox: otherBox, button: otherButton }) => {
+        if (otherBox !== checkbox) {
+          otherBox.checked = false;
+          otherButton.disabled = true;
+        }
+      });
 
+      // Enable this button
       button.disabled = false;
     } else {
       button.disabled = true;
@@ -61,12 +67,15 @@ function handleStripeCheckout(product) {
   });
 }
 
-
 // Call setupOption after page loads
 document.addEventListener("DOMContentLoaded", () => {
-  setupOption("checkClueMark", "stripeCheckoutClue", "clue");
-  setupOption("checkPDFMark", "stripeCheckoutPDF", "pdf");
-  setupOption("checkWebNoMark", "stripeCheckoutNoMark", "nomark_web");
-  setupOption("checkWeb", "stripeCheckoutSelfMark", "selfmark_web");
-  setupOption("checkNuclear", "stripeCheckoutNuclear", "nuclear");
+  const options = [
+    { checkbox: document.getElementById("checkClueMark"), button: document.getElementById("stripeCheckoutClue"), productId: "clue" },
+    { checkbox: document.getElementById("checkPDFMark"), button: document.getElementById("stripeCheckoutPDF"), productId: "pdf" },
+    { checkbox: document.getElementById("checkWebNoMark"), button: document.getElementById("stripeCheckoutNoMark"), productId: "nomark_web" },
+    { checkbox: document.getElementById("checkWeb"), button: document.getElementById("stripeCheckoutSelfMark"), productId: "selfmark_web" },
+    { checkbox: document.getElementById("checkNuclear"), button: document.getElementById("stripeCheckoutNuclear"), productId: "nuclear" }
+  ];
+
+  options.forEach(opt => setupOption(opt.checkbox.id, opt.button.id, opt.productId, options));
 });
