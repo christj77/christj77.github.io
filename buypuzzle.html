@@ -51,7 +51,7 @@
 <div style="text-align: center; margin-top: 2rem;">
   <p style="margin-bottom: 10px; font-weight: bold; font-size: 16px;">
 <h5 style="color: rgb(68, 198, 3);">
- Peaze Click Video  
+ Pleaze Click Video  
  <br>
   
   
@@ -386,6 +386,10 @@ Its a legal binding confirmation you accept  <br>Purchase Termz & Conditionz.<br
   </section>
 
   <!-- ========================= puzzle options section end ========================= -->
+
+
+
+  
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const checkboxes = document.querySelectorAll('.payment-check');
@@ -415,7 +419,7 @@ Its a legal binding confirmation you accept  <br>Purchase Termz & Conditionz.<br
   });
 </script>
 
-  <script>
+<!-- <script>
     const stripeLinks = {
       stripeCheckoutPDF: "https://buy.stripe.com/test_6oUdR996ugvK8XzeWl18c0d",
       stripeCheckoutNoMark: "https://buy.stripe.com/test_5kQ3cv1E22EU1v7eWl18c09",
@@ -432,7 +436,30 @@ Its a legal binding confirmation you accept  <br>Purchase Termz & Conditionz.<br
         });
       }
     });
-  </script>
+  </script> -->
+
+<!--:LIVE SCRIPT-->
+<!-- <script>
+    const stripeLinks = {
+      stripeCheckoutPDF:      "https://buy.stripe.com/00wbJ1gyW6Va7Tv7tT18c03",
+      stripeCheckoutNoMark:   "https://buy.stripe.com/14A8wP6Ym2EUddP4hH18c04",
+      stripeCheckoutSelfMark: "https://buy.stripe.com/7sYcN56Ym0wM8Xz7tT18c05",
+      stripeCheckoutNuclear:  "https://buy.stripe.com/3cI6oHgyW0wM0r3cOd18c06",
+      stripeCheckoutClue:     "https://buy.stripe.com/28E7sL2I60wM6Pr4hH18c02"
+    };
+
+    Object.entries(stripeLinks).forEach(([buttonId, url]) => {
+      const button = document.getElementById(buttonId);
+      if (button) {
+        button.addEventListener('click', () => {
+          window.location.href = url;
+        });
+      }
+    });
+  </script> -->
+
+
+
   <script>
     const checkboxes = document.querySelectorAll('.payment-check');
 
