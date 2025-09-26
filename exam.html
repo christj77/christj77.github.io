@@ -206,33 +206,46 @@ Its a legal binding confirmation you accept  Purchase Termz & Conditionz.<br>
   <div style="border: 2px solid #4CAF50; padding: 20px; border-radius: 10px; background-color: #f9fff9; width: 90%; max-width: 1000px; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
     <h2 style="color: #4CAF50; margin-top: 0; text-align: center;">Student Special Offer</h2>
 
-    <p><strong>Get $80 USD of Value for ONLY  $40 USD:</strong><br>
+    <p><strong>Get $80 USD of Value for ONLY <strong style="color: blue;">$40 USD</strong>:</strong><br>
     The 1000-question exam PDF is worth <strong>$50 USD</strong>, and the 187-clue self-marking crossword is worth <strong>$30 USD</strong>.
      <br>Normally $80 if bought separately, you get both for just <strong style="color: blue;">$40 USD</strong>
 </p>
 
     <p><strong>How you receive your products:</strong><br>
-    After purchase, you will receive <strong>two separate emails</strong>:</p>
+    After purchase, you will receive <strong>two separate emailz</strong>:</p>
 <ul>
   <li>
-    1000 Exam Question Preview <strong>7 PDF Pages</strong>: Show Preview
-    <input type="checkbox" onclick="window.location.href='pdfpreview.html';"> 
+    1000 Exam Question Preview <strong>7 PDF Pagez</strong>: Show Preview
+    <input type="checkbox" onchange="togglePreview(this, 'pdfpreview.html')">
   </li>
 
   <li>
-    A link to download your <strong>1000-question exam PDF </strong>: Show Preview   
-    <input type="checkbox" onclick="window.location.href='examemail.html';"> 
+    A link to download your <strong>1000-question exam PDF</strong>: Show Preview
+    <input type="checkbox" onchange="togglePreview(this, 'examemail.html')">
   </li>
 
   <li>
-    Your <strong>FREE UserID and password</strong> to access the 
-    <strong>187-clue self-marking online crossword </strong>: Show Preview
-    <input type="checkbox" onclick="window.location.href='gospelexam.html';"> 
+    Your <strong>FREE UserID and password</strong> to access the
+    <strong>187-clue self-marking online crossword</strong>: Show Preview
+    <input type="checkbox" onchange="togglePreview(this, 'gospelexam.html')">
   </li>
 </ul>
 
   </div>
 </div>
+<script>
+function togglePreview(checkbox, url) {
+  // Only redirect if the box is checked
+  if (checkbox.checked) {
+    window.location.href = url;
+  } else {
+    // If you want it to “unload” or go back on uncheck, you can do:
+    // window.history.back();
+    // Or simply do nothing:
+    // (leave empty to do nothing on uncheck)
+  }
+}
+</script>
 
 
 
