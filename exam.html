@@ -693,8 +693,9 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
  <!-- ========================= puzzle options section end ========================= -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  // ======= Set mode: "test" or "live" =======
-  const stripeMode = "test"; // change to "live" for production
+  // ======= Determine mode dynamically =======
+  const urlParams = new URLSearchParams(window.location.search);
+  const stripeMode = urlParams.get("mode") === "live" ? "live" : "test"; // default to test
 
   // ======= Stripe links for both modes =======
   const stripeLinksData = {
@@ -752,6 +753,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  console.log("Stripe mode:", stripeMode); // optional debug
 });
 </script>
 
