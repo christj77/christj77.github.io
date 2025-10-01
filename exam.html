@@ -690,76 +690,9 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
    <h3 style="color: red;">Revelation 20 </h3>  <h4 style="color: rgb(2, 175, 19);"> <strong>Jezus Christ</strong>  </h4> 
   <img src="./images/hell2.jpg" alt="Example" style="width:30%;">
 </div>
- <!-- ========================= puzzle options section end ========================= -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  // ======= Determine mode dynamically =======
-  const urlParams = new URLSearchParams(window.location.search);
-  const stripeMode = urlParams.get("mode") === "live" ? "live" : "test"; // default to test
-
-  // ======= Stripe links for both modes =======
-  const stripeLinksData = {
-    test: {
-      stripeCheckoutPDF: "https://buy.stripe.com/test_6oUdR996ugvK8XzeWl18c0d",
-      stripeCheckoutNoMark: "https://buy.stripe.com/test_8x214nciG0wMflX7tT18c0f",
-      stripeCheckoutSelfMark: "https://buy.stripe.com/test_28E7sL2I6gvK7Tv3dD18c0e",
-      stripeCheckoutNuclear: "https://buy.stripe.com/test_7sYdR93Ma7Ze6Pr7tT18c0b",
-      stripeCheckoutClue: "https://buy.stripe.com/test_8x2aEXciG3IY6Pr29z18c0c"
-    },
-    live: {
-      stripeCheckoutPDF: "https://buy.stripe.com/28E7sL2I6gvK7Tv3dD18c0e",
-      stripeCheckoutNoMark: "https://buy.stripe.com/4gM28rdmK3IYa1DbK918c0g",
-      stripeCheckoutSelfMark: "https://buy.stripe.com/8x214nciG0wMflX7tT18c0f",
-      stripeCheckoutNuclear: "https://buy.stripe.com/6oU4gz1E25R62zbaG518c0h",
-      stripeCheckoutClue: "https://buy.stripe.com/14A9AT2I6bbqc9L15v18c0i"
-    }
-  };
-
-  const stripeLinks = stripeLinksData[stripeMode];
-
-  // ======= Map buttons for checkbox logic =======
-  const buttons = {
-    checkClueMark: document.getElementById('stripeCheckoutClue'),
-    checkPDFMark: document.getElementById('stripeCheckoutPDF'),
-    checkWebNoMark: document.getElementById('stripeCheckoutNoMark'),
-    checkWeb: document.getElementById('stripeCheckoutSelfMark'),
-    checkNuclear: document.getElementById('stripeCheckoutNuclear')
-  };
-
-  // ======= Checkbox logic =======
-  const checkboxes = document.querySelectorAll('.payment-check');
-  checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', () => {
-      if (checkbox.checked) {
-        checkboxes.forEach(cb => {
-          if (cb !== checkbox) {
-            cb.checked = false;
-            if (buttons[cb.id]) buttons[cb.id].disabled = true;
-          }
-        });
-        if (buttons[checkbox.id]) buttons[checkbox.id].disabled = false;
-      } else {
-        if (buttons[checkbox.id]) buttons[checkbox.id].disabled = true;
-      }
-    });
-  });
-
-  // ======= Assign Stripe links to buttons =======
-  Object.entries(stripeLinks).forEach(([buttonId, url]) => {
-    const button = document.getElementById(buttonId);
-    if (button) {
-      button.addEventListener('click', () => {
-        window.location.href = url;
-      });
-    }
-  });
-
-  console.log("Stripe mode:", stripeMode); // optional debug
-});
-</script>
 
   <!-- ========================= puzzle options section end ========================= -->
-<!-- <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
     const checkboxes = document.querySelectorAll('.payment-check');
     const buttons = {
@@ -786,8 +719,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-</script> -->
-<!--   <script>
+</script>
+  <script>
     const stripeLinks = {
       stripeCheckoutPDF: "https://buy.stripe.com/test_6oUdR996ugvK8XzeWl18c0d",
       stripeCheckoutNoMark: "https://buy.stripe.com/test_8x214nciG0wMflX7tT18c0f",
@@ -805,8 +738,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   </script>
- -->
-  <!--   <script>
+
+   <!--  <script>
     const stripeLinks = {
       stripeCheckoutPDF: "https://buy.stripe.com/28E7sL2I6gvK7Tv3dD18c0e",
       stripeCheckoutNoMark: "https://buy.stripe.com/4gM28rdmK3IYa1DbK918c0g",
@@ -824,7 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   </script> -->
-<!--   <script>
+  <script>
     const checkboxes = document.querySelectorAll('.payment-check');
 
     checkboxes.forEach((checkbox) => {
@@ -836,7 +769,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
-  </script> -->
+  </script>
 <!-- ========================= Crossword puzzle Cost breakdown ========================= -->
 
 <section id="cost-breakdown" class="py-5 bg-light">
