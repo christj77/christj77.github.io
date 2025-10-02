@@ -706,6 +706,74 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const checkboxes = document.querySelectorAll('.payment-check');
+    const modeToggle = document.getElementById('stripeModeToggle');
+
+    // Stripe links for both modes
+    const stripeLinks = {
+      test: {
+        stripeCheckoutPDF: "https://buy.stripe.com/test_6oUdR996ugvK8XzeWl18c0d",
+        stripeCheckoutNoMark: "https://buy.stripe.com/test_8x214nciG0wMflX7tT18c0f",
+        stripeCheckoutSelfMark: "https://buy.stripe.com/test_28E7sL2I6gvK7Tv3dD18c0e",
+        stripeCheckoutNuclear: "https://buy.stripe.com/test_7sYdR93Ma7Ze6Pr7tT18c0b",
+        stripeCheckoutClue: "https://buy.stripe.com/test_8x2aEXciG3IY6Pr29z18c0c"
+      },
+      live: {
+        stripeCheckoutPDF: "https://buy.stripe.com/28E7sL2I6gvK7Tv3dD18c0e",
+        stripeCheckoutNoMark: "https://buy.stripe.com/4gM28rdmK3IYa1DbK918c0g",
+        stripeCheckoutSelfMark: "https://buy.stripe.com/8x214nciG0wMflX7tT18c0f",
+        stripeCheckoutNuclear: "https://buy.stripe.com/6oU4gz1E25R62zbaG518c0h",
+        stripeCheckoutClue: "https://buy.stripe.com/14A9AT2I6bbqc9L15v18c0i"
+      }
+    };
+
+    const buttons = {
+      stripeCheckoutClue: document.getElementById('stripeCheckoutClue'),
+      stripeCheckoutPDF: document.getElementById('stripeCheckoutPDF'),
+      stripeCheckoutNoMark: document.getElementById('stripeCheckoutNoMark'),
+      stripeCheckoutSelfMark: document.getElementById('stripeCheckoutSelfMark'),
+      stripeCheckoutNuclear: document.getElementById('stripeCheckoutNuclear')
+    };
+
+    // Checkbox logic (only one active at a time + enable/disable buttons)
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          checkboxes.forEach(cb => {
+            if (cb !== checkbox) {
+              cb.checked = false;
+              if (buttons[cb.id]) buttons[cb.id].disabled = true;
+            }
+          });
+          if (buttons[checkbox.id]) buttons[checkbox.id].disabled = false;
+        } else {
+          if (buttons[checkbox.id]) buttons[checkbox.id].disabled = true;
+        }
+      });
+    });
+
+    // Attach click events for Stripe checkout buttons
+    Object.entries(buttons).forEach(([buttonId, button]) => {
+      if (button) {
+        button.addEventListener('click', () => {
+          const mode = modeToggle.checked ? "live" : "test"; // live if checked, otherwise test
+          const url = stripeLinks[mode][buttonId];
+          if (url) window.location.href = url;
+        });
+      }
+    });
+
+    // Disable all checkout buttons by default until a checkbox is selected
+    Object.values(buttons).forEach(button => {
+      if (button) button.disabled = true;
+    });
+  });
+</script>
+
+
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const checkboxes = document.querySelectorAll('.payment-check');
     const buttons = {
       checkClueMark: document.getElementById('stripeCheckoutClue'),
       checkPDFMark: document.getElementById('stripeCheckoutPDF'),
@@ -750,7 +818,7 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
     });
   </script>
 
-  <!--   <script>
+    <script>
     const stripeLinks = {
       stripeCheckoutPDF: "https://buy.stripe.com/28E7sL2I6gvK7Tv3dD18c0e",
       stripeCheckoutNoMark: "https://buy.stripe.com/4gM28rdmK3IYa1DbK918c0g",
@@ -767,7 +835,7 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
         });
       }
     });
-  </script> -->
+  </script>
   <script>
     const checkboxes = document.querySelectorAll('.payment-check');
 
@@ -781,7 +849,7 @@ Saying with a loud voice, Fear God The Father, and give glory to Jezus Christ fo
       });
     });
   </script>
-<!-- ========================= Crossword puzzle Cost breakdown ========================= -->
+ --><!-- ========================= Crossword puzzle Cost breakdown ========================= -->
 
 <section id="cost-breakdown" class="py-5 bg-light">
   <div class="container text-center">
