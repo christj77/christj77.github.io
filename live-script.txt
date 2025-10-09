@@ -1,0 +1,19 @@
+<!-- 
+  <script>
+    const stripeLinks = {
+      stripeCheckoutPDF: "https://buy.stripe.com/test_6oUdR996ugvK8XzeWl18c0d",
+      stripeCheckoutNoMark: "https://buy.stripe.com/test_8x214nciG0wMflX7tT18c0f",
+      stripeCheckoutSelfMark: "https://buy.stripe.com/test_28E7sL2I6gvK7Tv3dD18c0e",
+      stripeCheckoutNuclear: "https://buy.stripe.com/test_7sYdR93Ma7Ze6Pr7tT1 8c0b",
+      stripeCheckoutClue: "https://buy.stripe.com/test_8x2aEXciG3IY6Pr29z18c0c"
+    };
+
+    Object.entries(stripeLinks).forEach(([buttonId, url]) => {
+      const button = document.getElementById(buttonId);
+      if (button) {
+        button.addEventListener('click', () => {
+          window.location.href = url;
+        });
+      }
+    });
+  </script> -->
