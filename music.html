@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Store</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222222;
+        }
+        header {
+            background: #150dfc;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #0cfd0c;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 12px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 95%;
+            max-width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .song-card {
+            background: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: calc(50% - 12px);
+            box-sizing: border-box;
+        }
+        .song-title {
+            font-size: 16px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        audio {
+            width: 120px;
+            height: 32px;
+        }
+        .buy-btn {
+            background: #0a7cff;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .buy-btn:hover {
+            background: #005fcc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jam Music Store</h1>
+        <h3>Jezus Christ</h3>
+        <p>Browse, listen, and purchase beats instantly</p>
+    </header>
+
+    <nav>
+             <a href="index.html">Heaven</a>
+        <a href="exam.html">Crossword Exam</a>
+        
+    </nav>
+
+
+
+    <div class="container" id="beats"><br>
+  
+<img src="./images/lionmusic.png" style="display:inline-block; width:30%; margin:0 auto; text-align:center;" />      
+
+ <!-- Column 1 -------------------------------------------------------------------------------------------------------------------------------->
+
+<div style="display: flex; gap: 2px;">
+
+  <!-- Column 1 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Techno1 Beat(wav)</strong><br>
+    ft Lion & Lamb 1min27sec
+    <audio controls style="width: 100%;">
+        <source src="./musicbeats/Techno1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/UARpG'" style="margin-top:5px;">Buy $10</button>
+  </div>
+
+  <!-- Column 2 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop1 Beat (wav)</strong><br>
+    ft Lion Cow-Horse 1min27sec
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/72JVU'" style="margin-top:5px;">Buy $10</button>
+  </div>
+
+  <!-- Column 3 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Reggae1 Beat (wav)</strong><br>
+    ft Lion & Birds 1min37sec 
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Reggae1.mp3" type="audio/mp3">    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/q7ZL3'" style="margin-top:5px;">Buy $10</button>
+  </div>
+
+  <!-- Column 4 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop2 Beat (wav)</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" >Buy $10</button>
+  </div>
+  <!-- Column 5 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Kwaito1  Beat (wav)</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" >Buy $10</button>
+  </div>
+</div>
+
+ <!-- Column 2 -------------------------------------------------------------------------------------------------------------------------------->
+
+<div style="display: flex; gap: 2px;">
+
+  <!-- Column 1 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Techno1 Beat(wav)</strong><br>
+    ft Lion & Lamb 1min27sec
+    <audio controls style="width: 100%;">
+        <source src="./musicbeats/Techno1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/UARpG'" style="margin-top:5px;"disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 2 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop1 Beat (wav)</strong><br>
+    ft Lion Cow-Horse 1min27sec
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/72JVU'" style="margin-top:5px;" disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 3 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Reggae1 Beat (wav)</strong><br>
+    ft Lion & Birds 1min37sec 
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Reggae1.mp3" type="audio/mp3">    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/q7ZL3'" style="margin-top:5px;" disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 4 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop2 Beat (wav)</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" disabled >Buy $10</button>
+  </div>
+  <!-- Column 5 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Kwaito1  Beat (wav)</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" disabled>Buy $10</button>
+  </div>
+</div>
+
+ <!-- Column 3 -------------------------------------------------------------------------------------------------------------------------------->
+
+  <div style="display: flex; gap: 2px;">
+
+  <!-- Column 1 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Techno1 Beat(wav)</strong><br>
+    ft Lion & Lamb 1min27sec
+    <audio controls style="width: 100%;">
+        <source src="./musicbeats/Techno1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/UARpG'" style="margin-top:5px;"disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 2 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop1 Beat (wav)</strong><br>
+    ft Lion Cow-Horse 1min27sec
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop1.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/72JVU'" style="margin-top:5px;"disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 3 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Reggae1 Beat (wav)</strong><br>
+    ft Lion & Birds 1min37sec 
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Reggae1.mp3" type="audio/mp3">    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/q7ZL3'" style="margin-top:5px;"disabled>Buy $10</button>
+  </div>
+
+  <!-- Column 4 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Hipop2 Beat (wav)</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" disabled>Buy $10</button>
+  </div>
+  <!-- Column 5 -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px;">
+    <strong>Upcoming</strong><br>
+    ft Lion & Rooster & Dog
+    <audio controls style="width: 100%;">
+      <source src="./musicbeats/Hipop2.mp3" type="audio/mp3">
+    </audio>
+    <button onclick="window.location.href='https://payhip.com/b/vVpRT'" style="margin-top:5px;" disabled>Buy $10</button>
+  </div>
+</div> 
+</body>
+</html>
