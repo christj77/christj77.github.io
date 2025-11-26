@@ -1,0 +1,246 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+          <link rel="stylesheet" href="styles.css" />
+<style>
+  /* Existing styles... */
+
+    #supportWidget {
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      z-index: 1000;
+      
+    }
+  #contactBtn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+  }
+
+    #supportWidget img {
+      width: 50%;
+      height: auto;
+    
+  }
+</style>
+
+    </head>
+    <body>
+      <header class="header">
+        <!-- Optional header content here -->
+      </header>
+
+      <main class="main-wrapper">
+        <div class="grid-and-clues">
+          
+          <!-- Crossword Grid -->
+          <div id="grid"></div>
+
+          <!-- Clue Panel Scroll Container -->
+          <div class="clue-scroll-container">
+<p style="text-align: center;">Hello <strong id="usernameDisplay">Guest</strong>,<span id="volumeDisplay"></span> </p>
+
+            <div class="clue-page">
+                    <h3>Self Marking  Cross Word Puzzle -Demo</h3>
+
+                <div style="text-align: center; margin: 1.5rem 0;">
+  <button id="clueHelpBtn" style="margin: 0 1rem; padding: 0.5rem 1rem; background-color: #22ff00; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    🧩 Clue Help
+  </button>
+<script>
+  document.getElementById('clueHelpBtn').addEventListener('click', () => {
+    window.open('withselfmarkclue.html', '_blank'); // Opens in new tab/window
+  });
+</script>
+    <span style="border-left: 1px solid #ccc; margin: 0 1rem;"></span>
+
+     <button id="ansSearchBtn" style="padding: 0.5rem 1rem; background-color: #ff0000; color: white; border: none; border-radius: 1px; cursor: pointer;">
+    Answer Search
+  </button> 
+    <script>
+  document.getElementById('ansSearchBtn').addEventListener('click', () => {
+   window.open('withselfans.html', '_blank'); // Opens in new tab/window
+
+  });
+</script>
+    <span style="border-left: 1px solid #ccc; margin: 0 1rem;"></span>
+<button 
+    id="logout" 
+    style="margin: 0 1rem; padding: 0.5rem 1rem; background-color: #22ff00; color: white; border: none; border-radius: 5px; cursor: pointer;"
+    onclick="closeTab()">
+    🧩 Logout
+</button>
+
+<script>
+function closeTab() {
+    // Trick: open a blank page in the same tab, then close it
+    const win = window.open('about:blank', '_self'); 
+    win.close();
+}
+</script>
+
+
+
+  </div>
+              <div class="clue-section">
+
+                <!-- Across Col 1 -->
+                <div class="clue-column">
+                  <h5>
+                    Across
+                    <!-- <label>
+      <input type="checkbox" id="revealAnswers"> 
+    </label> -->
+
+                  </h5>
+                  <div id="acrossCol1" class="clue-inline-list"></div>
+                </div>
+      <!-- Down Col 1 -->
+      <div class="clue-column">
+        <h5>
+        Down
+          <label style="font-size: 0.8em; font-weight: normal;">
+            <!-- <input type="checkbox" id="toggleBlurry" style="margin-left: 10px; accent-color: rgb(0, 0, 0);"> -->
+            
+          </label>
+          
+        </h5>
+
+        <div id="downCol1" class="clue-inline-list"></div>
+      </div>
+
+                <!-- Across Col 2 -->
+        <div class="clue-column">
+        <h5>
+        Across
+          <label style="font-size: 0.8em; font-weight: normal;">
+    
+      <!-- <input type="checkbox" id="saveGame" style="margin-left: 10px; accent-color: black;"> -->
+
+    
+        </h5>
+        <div id="acrossCol2" class="clue-inline-list"></div>
+      </div>
+
+                <!-- Down Col 2 -->
+      <div class="clue-column">
+    <h5>
+      Down
+      <label style="font-size: 0.8em; font-weight: normal;">
+  
+    </h5>
+
+      <div id="downCol2" class="clue-inline-list"></div>
+    </div>
+
+                <!-- Hidden file input for loading CSV -->
+                <input type="file" id="csvUpload" accept=".csv" style="display: none;" />
+
+                <!-- Across Col 3 -->
+      <div class="clue-column">
+        <h5>Across
+       
+
+        </h5>
+        <div id="acrossCol3" class="clue-inline-list"></div>
+      </div>
+
+                <!-- Down Col 3 -->
+      <div class="clue-column">
+        <h5>Down
+    
+
+
+        </h5>
+        <div id="downCol3" class="clue-inline-list"></div>
+      </div>
+
+              </div> <!-- .clue-section -->
+            </div> <!-- .clue-page -->
+          </div> <!-- .clue-scroll-container -->
+
+        </div> <!-- .grid-and-clues -->
+      </main>
+
+      <div id="volumeSelectorContainer" style="display: none; margin: 20px;">
+  <h3>Select Volume</h3>
+  <select id="volumeSelector" class="form-control">
+    <option value="">-- Choose --</option>
+    <option value="vol1">Volume 1</option>
+    <option value="vol2">Volume 2</option>
+    <option value="vol3" disabled>Volume 3</option>
+    <option value="vol4" disabled>Volume 4</option>
+    <option value="vol5" disabled>Volume 5</option>
+    <option value="vol6" disabled>Volume 6</option>
+    <option value="vol7" disabled>Volume 7</option>
+  </select>
+  <button id="saveVolumeBtn" class="btn btn-success" style="margin-top: 10px;">Save Volume</button>
+</div>
+ <script>
+  const userData = JSON.parse(sessionStorage.getItem("crosswordUser"));
+  const scriptToLoad = sessionStorage.getItem("scriptToLoad");
+
+//   if (!userData || !userData.userId || !userData.deviceId || !userData.product) {
+//     alert("Unauthorized or expired session. Please log in again.");
+//     window.location.href = "index.html";
+//   } else {
+//     const nameEl = document.getElementById("usernameDisplay");
+//     if (nameEl) {
+//       nameEl.textContent = userData.name || userData.userId;
+//     }
+
+    // If product is noselfmark, ignore scriptToLoad and load noselfmark.js directly
+    if (userData.product.toLowerCase() === "withselfmark") {
+      const script = document.createElement("script");
+      script.src = "withselfmark.js";
+      script.type = "module"; // or omit if not using modules
+      document.body.appendChild(script);
+    } 
+    // For other products, load scriptToLoad if it exists
+    else if (scriptToLoad) {
+      const script = document.createElement("script");
+      script.src = scriptToLoad;
+      script.type = "module"; // or omit if not using modules
+      document.body.appendChild(script);
+    } else {
+      alert("Missing crossword script. Please log in again.");
+      window.location.href = "index.html";
+    }
+//   }
+</script>
+  
+
+<!--Start of Tawk.to Script-->
+<!-- Image Support Widget -->
+
+<!-- </script>
+ <div id="supportWidget"  >
+
+    <img src="./images/support.png" alt="Support" /><br>
+         <button id="contactBtn" style="padding: 0.5rem 1rem; background-color: #ffb300; color: white; border: none; border-radius: 1px; cursor: pointer;">
+    Contact Support
+  </button>
+  <script>  document.getElementById('contactBtn').addEventListener('click', () => {
+    window.open('/contact.html', '_blank');
+  });</script> -->
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68a493eacf910f19240e51c3/1j31e3jgk';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+  </div>
+<script  type="module"  src="playdemo.js"></script>
+    </body>
+    </html>
